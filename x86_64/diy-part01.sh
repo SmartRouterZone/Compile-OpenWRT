@@ -14,7 +14,7 @@
 # sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # 替换packages源为immortalwrt,避免go等依赖包更新不及时
-sed -i '1s|.*|src-git packages https://github.com/immortalwrt/packages.git;openwrt-23.05|' feeds.conf.default
+# sed -i '1s|.*|src-git packages https://github.com/immortalwrt/packages.git;openwrt-23.05|' feeds.conf.default
 
 # Add a feed source
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
