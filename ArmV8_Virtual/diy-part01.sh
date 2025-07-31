@@ -31,12 +31,13 @@
 # git clone https://github.com/xiechangan123/luci-i18n-xray-zh-cn.git package/custom-package/luci-i18n-xray-zh-cn
 # git clone https://github.com/pymumu/smartdns.git package/custom-package/smartdns
 # git clone https://github.com/sirpdboy/luci-app-netdata.git package/custom-package/luci-app-netdata
+
 # Passwall2 | 采用clone的方式
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages.git package/custom-package/Passwall-Packages
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2.git package/custom-package/Passwall2
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall.git package/custom-package/Passwall
 # Open Clash
-git clone --depth=1 --single-branch --branch "dev" https://github.com/vernesong/OpenClash.git package/custom-package/OpenClash
+git clone --depth=1 --single-branch --branch "master" https://github.com/vernesong/OpenClash.git package/custom-package/OpenClash
 # SSR+
 git clone --depth=1 https://github.com/fw876/helloworld.git package/custom-package/helloworld
 # Others

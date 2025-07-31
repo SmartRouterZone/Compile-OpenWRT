@@ -160,7 +160,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{env.DEVICE_NAME}}_${{env.TAG_DATE}}
+        tag_name: ArmV8-Virtual_v23.05-SNAPSHOT
         files: ${{ env.FIRMWARE }}/*
         body: |
           源码: ${{env.REPO_URL}}
@@ -169,13 +169,13 @@ jobs:
           LAN: ${{env.IP_ADDR}}
           时间: ${{env.UPLOAD_DATE}} CST-8
 
-    - name: Remove old Releases 删除旧版Release (只保留5个)
+    - name: Remove old Releases 删除旧版Release (只保留4个)
       uses: dev-drprasad/delete-older-releases@master
       if: steps.organize.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true' && !cancelled()
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        keep_latest: 5
+        keep_latest: 4
         delete_tags: true
 
     - name: Delete workflow runs 删除工作流 (较旧的保留3天)
