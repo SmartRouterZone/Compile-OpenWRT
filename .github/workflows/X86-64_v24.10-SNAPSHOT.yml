@@ -160,14 +160,14 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: x86-64_v24.10-SNAPSHOT
+        tag_name: x86-64_${{env.TAG_DATE}}
         files: ${{ env.FIRMWARE }}/*
         body: |
-          源码: ${{env.REPO_URL}}
-          分支: ${{env.REPO_BRANCH}}
-          平台: ${{env.DEVICE_NAME}}
+          Code: ${{env.REPO_URL}}
+          Branch: ${{env.REPO_BRANCH}}
+          Target: ${{env.DEVICE_NAME}}
           LAN: ${{env.IP_ADDR}}
-          时间: ${{env.UPLOAD_DATE}} CST-8
+          Date: ${{env.UPLOAD_DATE}} CST-8
 
     - name: Remove old Releases 删除旧版Release (只保留4个)
       uses: dev-drprasad/delete-older-releases@master
