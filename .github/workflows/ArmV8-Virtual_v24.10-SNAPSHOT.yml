@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Compile ArmV8-Virtual_v23.05-SNAPSHOT
+name: Compile ArmV8-Virtual_v24.10-SNAPSHOT
 
 # UTC时间每月1日08:05开始运行，北京时间:+8，即16:05(排队会有延迟)
 on:
@@ -22,10 +22,10 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/immortalwrt/immortalwrt.git
-  REPO_BRANCH: openwrt-23.05
+  REPO_URL: https://github.com/openwrt/openwrt.git
+  REPO_BRANCH: openwrt-24.10
   FEEDS_CONF: ArmV8_Virtual/feeds.conf.default
-  CONFIG_FILE: ArmV8_Virtual/diffconfig_v23.05-SNAPSHOT
+  CONFIG_FILE: ArmV8_Virtual/diffconfig_v24.10-snapshot-armv8_20251006.diff
   DIY_P1_SH: ArmV8_Virtual/diy-part01.sh
   DIY_P2_SH: ArmV8_Virtual/diy-part02.sh
 
@@ -98,7 +98,6 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
         cd openwrt
-        cp -rf $GITHUB_WORKSPACE/PATCH/files .
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: SSH connection to Actions SSH连接
@@ -160,14 +159,14 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ArmV8-Virtual_v23.05-SNAPSHOT
+        tag_name: ArmV8-Virtual_${{env.TAG_DATE}}
         files: ${{ env.FIRMWARE }}/*
         body: |
-          源码: ${{env.REPO_URL}}
-          分支: ${{env.REPO_BRANCH}}
-          平台: ${{env.DEVICE_NAME}}
+          Code: ${{env.REPO_URL}}
+          Branch: ${{env.REPO_BRANCH}}
+          Target: ${{env.DEVICE_NAME}}
           LAN: ${{env.IP_ADDR}}
-          时间: ${{env.UPLOAD_DATE}} CST-8
+          Date: ${{env.UPLOAD_DATE}} CST-8
 
     - name: Remove old Releases 删除旧版Release (只保留4个)
       uses: dev-drprasad/delete-older-releases@master

@@ -33,3 +33,10 @@ sed -i "/timezone='.*'/a\\\t\t\set system.@system[-1].zonename='Asia/Shanghai'" 
 # sed -i "s/0.openwrt.pool.ntp.org/ntp.aliyun.com/g" package/base-files/files/bin/config_generate
 # sed -i "s/1.openwrt.pool.ntp.org/cn.ntp.org.cn/g" package/base-files/files/bin/config_generate
 # sed -i "s/2.openwrt.pool.ntp.org/cn.pool.ntp.org/g" package/base-files/files/bin/config_generate
+
+# 自定义配置
+# cp -rf $GITHUB_WORKSPACE/PATCH/files .
+
+# Custom Packages
+cp -rf $GITHUB_WORKSPACE/CustomPackages/msd_lite/ ./package/
+cp -rf $GITHUB_WORKSPACE/CustomPackages/tcping/ ./package/network/utils/
