@@ -38,5 +38,5 @@ sed -i "/timezone='.*'/a\\\t\t\set system.@system[-1].zonename='Asia/Shanghai'" 
 # cp -rf $GITHUB_WORKSPACE/PATCH/files .
 
 # Custom Packages
-cp -rf $GITHUB_WORKSPACE/CustomPackages/msd_lite/ ./package/
-cp -rf $GITHUB_WORKSPACE/CustomPackages/tcping/ ./package/network/utils/
+cp -rf $GITHUB_WORKSPACE/PATCH/custom_packages/msd_lite/ ./package/
+cp -rf $GITHUB_WORKSPACE/PATCH/custom_packages/tcping/ ./package/network/utils/
