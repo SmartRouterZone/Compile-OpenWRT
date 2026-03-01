@@ -33,13 +33,17 @@
 # git clone https://github.com/sirpdboy/luci-app-netdata.git package/custom-package/luci-app-netdata
 
 # Passwall2 | 采用clone的方式
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages.git package/custom-package/Passwall-Packages
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2.git package/custom-package/Passwall2
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall.git package/custom-package/Passwall
+git clone --depth=1 https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git package/custom-package/Passwall-Packages
+git clone --depth=1 https://github.com/Openwrt-Passwall/openwrt-passwall2.git package/custom-package/Passwall2
+git clone --depth=1 https://github.com/Openwrt-Passwall/openwrt-passwall.git package/custom-package/Passwall
 # Open Clash
 git clone --depth=1 --single-branch --branch "master" https://github.com/vernesong/OpenClash.git package/custom-package/OpenClash
+# NIKKI
+git clone --depth=1 https://github.com/nikkinikki-org/OpenWrt-nikki.git package/custom-package/nikki
 # SSR+
 git clone --depth=1 https://github.com/fw876/helloworld.git package/custom-package/helloworld
 # Others
 git clone --depth=1 https://github.com/chenmozhijin/luci-app-socat.git package/custom-package/luci-app-socat
-git clone --depth=1 https://github.com/morytyann/OpenWrt-mihomo.git package/custom-package/luci-app-mihomo
+
+# 移除 openwrt feeds 自带的核心库
+rm -rf feeds/packages/net/{xray-core,v2ray-geodata,sing-box,chinadns-ng,dns2socks,hysteria,ipt2socks,microsocks,naiveproxy,shadowsocks-libev,shadowsocks-rust,shadowsocksr-libev,simple-obfs,tcping,trojan-plus,tuic-client,v2ray-plugin,xray-plugin,geoview,shadow-tls}
