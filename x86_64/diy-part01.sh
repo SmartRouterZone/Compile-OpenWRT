@@ -18,10 +18,10 @@
 
 # Add a feed source
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
-# echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main" >> "feeds.conf.default"
-echo "src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git;main" >> "feeds.conf.default"
-echo "src-git mihomo https://github.com/morytyann/OpenWrt-mihomo.git;main" >> "feeds.conf.default"
+# echo 'src-git passwall https://github.com/Openwrt-Passwall/openwrt-passwall.git' >>feeds.conf.default
+echo "src-git passwall_packages https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git;main" >> "feeds.conf.default"
+echo "src-git passwall2 https://github.com/Openwrt-Passwall/openwrt-passwall2.git;main" >> "feeds.conf.default"
+echo "src-git nikki https://github.com/nikkinikki-org/OpenWrt-nikki.git;main" >> "feeds.conf.default"
 
 # themes添加（svn co 命令意思：指定版本如https://github）
 # git clone https://github.com/jerrykuku/luci-theme-argon.git package/custom-package/luci-theme-argon
@@ -36,4 +36,4 @@ echo "src-git mihomo https://github.com/morytyann/OpenWrt-mihomo.git;main" >> "f
 # git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages.git package/custom-package/Passwall-Packages
 # git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2.git package/custom-package/Passwall2
 # Open Clash
-# git clone --depth=1 --single-branch --branch "dev" https://github.com/vernesong/OpenClash.git package/custom-package/OpenClash
+# git clone --depth=1 --single-branch --branch "master" https://github.com/vernesong/OpenClash.git package/custom-package/OpenClash
